@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-x-hidden w-full">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>For Anishka 💕</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Caveat:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Caveat:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -41,6 +44,14 @@
         }
     </script>
     <style>
+        html,
+        body {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            max-width: 100vw !important;
+            position: relative;
+        }
+
         /* Clean & Elegant Background Gradient */
         body {
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="font-size: 24px;"><text y="20">✨</text></svg>'), auto;
@@ -52,39 +63,100 @@
         }
 
         @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Subtle Floating & Breathing Animations */
         @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(1.5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(1.5deg);
+            }
         }
+
         @keyframes breathe {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(255, 77, 109, 0.4)); }
-            50% { transform: scale(1.03); filter: drop-shadow(0 0 30px rgba(255, 77, 109, 0.8)); }
+
+            0%,
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 15px rgba(255, 77, 109, 0.4));
+            }
+
+            50% {
+                transform: scale(1.03);
+                filter: drop-shadow(0 0 30px rgba(255, 77, 109, 0.8));
+            }
         }
+
         @keyframes pop-in {
-            0% { transform: scale(0.7); opacity: 0; }
-            60% { transform: scale(1.08); opacity: 1; }
-            100% { transform: scale(1); opacity: 1; }
+            0% {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.08);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         /* Gentle Petal & Sparkle Fall */
         @keyframes fall {
-            0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
-            15% { opacity: 0.9; }
-            50% { transform: translate3d(25px, 50vh, 0) rotate(180deg); }
-            85% { opacity: 0.9; }
-            100% { transform: translate3d(-25px, 110vh, 0) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translate3d(0, -10vh, 0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.9;
+            }
+
+            50% {
+                transform: translate3d(25px, 50vh, 0) rotate(180deg);
+            }
+
+            85% {
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: translate3d(-25px, 110vh, 0) rotate(360deg);
+                opacity: 0;
+            }
         }
 
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        .animate-breathe { animation: breathe 3s ease-in-out infinite; }
-        .animate-pop { animation: pop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
-        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-breathe {
+            animation: breathe 3s ease-in-out infinite;
+        }
+
+        .animate-pop {
+            animation: pop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
         .petal {
             position: fixed;
             pointer-events: none;
@@ -100,21 +172,44 @@
         }
 
         /* ================= PERFECT 3D ENVELOPE ================= */
-        .envelope-wrapper { perspective: 1800px; }
-        
+        .envelope-wrapper {
+            perspective: 1800px;
+        }
+
         .env-letter {
             opacity: 0;
             z-index: 10;
         }
-        
+
         @keyframes envelope-letter-out {
-            0%   { transform: translateY(0%) scale(0.9); z-index: 10; opacity: 1; }
-            40%  { transform: translateY(-120%) scale(1.02); z-index: 10; opacity: 1; } 
-            50%  { transform: translateY(-120%) scale(1.02); z-index: 50; opacity: 1; } 
-            100% { transform: translateY(-10%) scale(1.05); z-index: 50; opacity: 1; } /* Rests perfectly ON TOP */
+            0% {
+                transform: translateY(0%) scale(0.9);
+                z-index: 10;
+                opacity: 1;
+            }
+
+            40% {
+                transform: translateY(-120%) scale(1.02);
+                z-index: 10;
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(-120%) scale(1.02);
+                z-index: 50;
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-10%) scale(1.05);
+                z-index: 50;
+                opacity: 1;
+            }
+
+            /* Rests perfectly ON TOP */
         }
 
-        .envelope-wrapper.is-open .env-letter { 
+        .envelope-wrapper.is-open .env-letter {
             animation: envelope-letter-out 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
             animation-delay: 0.4s;
         }
@@ -124,57 +219,112 @@
             transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), z-index 0s 0.4s;
             z-index: 40;
         }
+
         .envelope-wrapper.is-open .env-top-flap {
             transform: rotateX(180deg);
             z-index: 5;
         }
 
-        .env-seal { transition: all 0.5s ease; z-index: 45; }
-        .envelope-wrapper.is-open .env-seal { opacity: 0; transform: scale(0) translate(-50%, -50%); pointer-events: none; }
+        .env-seal {
+            transition: all 0.5s ease;
+            z-index: 45;
+        }
+
+        .envelope-wrapper.is-open .env-seal {
+            opacity: 0;
+            transform: scale(0) translate(-50%, -50%);
+            pointer-events: none;
+        }
 
         /* Seamless Flaps */
-        .flap-left { clip-path: polygon(0 0, 52% 52%, 0 100%); }
-        .flap-right { clip-path: polygon(100% 0, 48% 52%, 100% 100%); }
-        .flap-bottom { clip-path: polygon(0 100%, 50% 48%, 100% 100%); }
-        .flap-top { clip-path: polygon(0 0, 100% 0, 50% 55%); }
+        .flap-left {
+            clip-path: polygon(0 0, 52% 52%, 0 100%);
+        }
+
+        .flap-right {
+            clip-path: polygon(100% 0, 48% 52%, 100% 100%);
+        }
+
+        .flap-bottom {
+            clip-path: polygon(0 100%, 50% 48%, 100% 100%);
+        }
+
+        .flap-top {
+            clip-path: polygon(0 0, 100% 0, 50% 55%);
+        }
 
         /* ================= PERFECT 3D MAILBOX ================= */
-        .mailbox-scene { perspective: 1500px; }
-        
+        .mailbox-scene {
+            perspective: 1500px;
+        }
+
         .mailbox-door-group {
-            transform-origin: 15% 45%; 
+            transform-origin: 15% 45%;
             transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
             transform-style: preserve-3d;
         }
-        .mailbox-scene.is-open .mailbox-door-group { transform: rotateY(-115deg); }
+
+        .mailbox-scene.is-open .mailbox-door-group {
+            transform: rotateY(-115deg);
+        }
 
         .mailbox-flag {
-            transform-origin: 77.5% 45%; 
+            transform-origin: 77.5% 45%;
             transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        .mailbox-scene.is-open .mailbox-flag { transform: rotate(-90deg); }
 
-        .mailbox-letter { 
-            opacity: 0; 
+        .mailbox-scene.is-open .mailbox-flag {
+            transform: rotate(-90deg);
+        }
+
+        .mailbox-letter {
+            opacity: 0;
             pointer-events: none;
-            z-index: 20; 
-        }
-        
-        @keyframes mailbox-letter-out {
-            0%   { transform: translate(-50%, 0%) scale(0.5); z-index: 20; opacity: 0; }
-            40%  { transform: translate(-50%, -130%) scale(1); z-index: 20; opacity: 1; }
-            50%  { transform: translate(-50%, -130%) scale(1); z-index: 50; opacity: 1; }
-            100% { transform: translate(-50%, -20%) scale(1.1); z-index: 50; opacity: 1; pointer-events: auto; }
+            z-index: 20;
         }
 
-        .mailbox-scene.is-open .mailbox-letter { 
+        @keyframes mailbox-letter-out {
+            0% {
+                transform: translate(-50%, 0%) scale(0.5);
+                z-index: 20;
+                opacity: 0;
+            }
+
+            40% {
+                transform: translate(-50%, -130%) scale(1);
+                z-index: 20;
+                opacity: 1;
+            }
+
+            50% {
+                transform: translate(-50%, -130%) scale(1);
+                z-index: 50;
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, -20%) scale(1.1);
+                z-index: 50;
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+
+        .mailbox-scene.is-open .mailbox-letter {
             animation: mailbox-letter-out 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
             animation-delay: 0.2s;
         }
 
         /* Cute iPhone-style Buttons */
-        .btn-squish { transition: transform 0.1s, box-shadow 0.1s; touch-action: manipulation; }
-        .btn-squish:active { transform: translateY(5px); box-shadow: 0 0px 0 #ff8fa3; }
+        .btn-squish {
+            transition: transform 0.1s, box-shadow 0.1s;
+            touch-action: manipulation;
+        }
+
+        .btn-squish:active {
+            transform: translateY(5px);
+            box-shadow: 0 0px 0 #ff8fa3;
+        }
 
         /* Speech Bubble Tail */
         .tooltip-tail::after {
@@ -189,23 +339,43 @@
         }
 
         /* Premium Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #fff5f5; }
-        ::-webkit-scrollbar-thumb { background: #ffb7b2; border-radius: 8px; border: 2px solid #fff5f5; }
-        ::-webkit-scrollbar-thumb:hover { background: #ff4d6d; }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
 
-        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
+        ::-webkit-scrollbar-track {
+            background: #fff5f5;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ffb7b2;
+            border-radius: 8px;
+            border: 2px solid #fff5f5;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff4d6d;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
     </style>
 </head>
-<body class="font-body text-kawaii-dark antialiased relative selection:bg-kawaii-pink selection:text-white">
+
+<body
+    class="font-body text-kawaii-dark antialiased relative selection:bg-kawaii-pink selection:text-white overflow-x-hidden w-full max-w-full">
 
     <!-- Container for falling petals & sparkles -->
     <div id="petals-container" class="fixed inset-0 pointer-events-none z-[1]"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full glass-nav z-[100] transition-all duration-300 shadow-[0_2px_15px_rgba(255,183,178,0.15)] border-b border-white/60">
+    <nav
+        class="fixed top-0 w-full glass-nav z-[100] transition-all duration-300 shadow-[0_2px_15px_rgba(255,183,178,0.15)] border-b border-white/60">
         <div class="max-w-md sm:max-w-5xl mx-auto px-5 py-3 sm:py-4 flex justify-between items-center">
-            <a href="#home" class="font-cute text-2xl sm:text-3xl text-kawaii-text flex items-center gap-2 hover:scale-105 transition-transform drop-shadow-sm">
+            <a href="#home"
+                class="font-cute text-2xl sm:text-3xl text-kawaii-text flex items-center gap-2 hover:scale-105 transition-transform drop-shadow-sm">
                 <span>🌸</span> For Anishka
             </a>
             <div class="hidden sm:flex space-x-8 font-extrabold text-kawaii-dark/80 text-sm tracking-wide">
@@ -218,75 +388,98 @@
     </nav>
 
     <!-- Hero Section -->
-    <header id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative pt-10 z-10">
+    <header id="home"
+        class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative pt-10 z-10">
         <div class="animate-float mb-6 relative">
             <div class="absolute inset-0 bg-kawaii-pink blur-[35px] opacity-50 rounded-full animate-pulse"></div>
-            <svg class="w-24 h-24 text-kawaii-text relative z-10 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            <svg class="w-24 h-24 text-kawaii-text relative z-10 drop-shadow-md" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
             </svg>
         </div>
-        <h1 class="font-cute text-6xl sm:text-8xl text-kawaii-text mb-5 tracking-wide drop-shadow-[0_4px_4px_rgba(255,77,109,0.15)]">
+        <h1
+            class="font-cute text-6xl sm:text-8xl text-kawaii-text mb-5 tracking-wide drop-shadow-[0_4px_4px_rgba(255,77,109,0.15)]">
             Anishka ✨
         </h1>
-        <p class="font-body font-black text-lg sm:text-2xl text-kawaii-dark w-full max-w-sm sm:max-w-2xl bg-white/80 backdrop-blur-xl px-6 py-5 sm:py-6 rounded-[2rem] shadow-glass border-2 border-white/80 leading-relaxed relative z-10 hover:scale-[1.02] transition-transform duration-500">
+        <p
+            class="font-body font-black text-lg sm:text-2xl text-kawaii-dark w-full max-w-sm sm:max-w-2xl bg-white/80 backdrop-blur-xl px-6 py-5 sm:py-6 rounded-[2rem] shadow-glass border-2 border-white/80 leading-relaxed relative z-10 hover:scale-[1.02] transition-transform duration-500">
             The most beautiful, precious, and special girl <br class="hidden sm:block"> in the entire universe 🌸
         </p>
     </header>
 
     <!-- Perfectly Centered & Beautifully Rooted White Flower Garden -->
     <section id="garden" class="py-24 px-4 w-full relative z-10">
-        <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-xl border-2 border-white rounded-[2.5rem] p-6 sm:p-12 shadow-glass">
-            <h2 class="font-cute text-4xl sm:text-5xl text-center text-kawaii-text mb-4 drop-shadow-sm">In a Garden of Millions... 🌷</h2>
-            <p class="font-bold text-base sm:text-lg text-kawaii-dark/80 text-center max-w-2xl mx-auto mb-10 px-4 leading-relaxed">
-                There are countless beautiful flowers in this world, but you are a completely different kind of special. You are the only one that truly glows! ✨
+        <div
+            class="max-w-4xl mx-auto bg-white/70 backdrop-blur-xl border-2 border-white rounded-[2.5rem] p-6 sm:p-12 shadow-glass">
+            <h2 class="font-cute text-4xl sm:text-5xl text-center text-kawaii-text mb-4 drop-shadow-sm">In a Garden of
+                Millions... 🌷</h2>
+            <p
+                class="font-bold text-base sm:text-lg text-kawaii-dark/80 text-center max-w-2xl mx-auto mb-10 px-4 leading-relaxed">
+                There are countless beautiful flowers in this world, but you are a completely different kind of special.
+                You are the only one that truly glows! ✨
             </p>
-            
+
             <!-- Garden Grid: 15 items makes Index 7 the absolute center -->
-            <div id="flower-grid" class="grid grid-cols-3 sm:grid-cols-5 gap-y-6 sm:gap-y-12 gap-x-4 justify-items-center items-end border-b-[4px] border-[#e2d1f9]/40 pb-3 rounded-b-xl">
+            <div id="flower-grid"
+                class="grid grid-cols-3 sm:grid-cols-5 gap-y-6 sm:gap-y-12 gap-x-4 justify-items-center items-end border-b-[4px] border-[#e2d1f9]/40 pb-3 rounded-b-xl">
                 <!-- Injected via JS -->
             </div>
-            
+
             <div class="flex justify-center mt-12">
-                <p class="font-extrabold text-sm sm:text-base text-kawaii-text bg-white/90 px-6 py-3 rounded-full border border-kawaii-pink/30 shadow-sm animate-bounce">
-                    Tap & Hold the glowing flower! 🌼
+                <p
+                    class="font-extrabold text-sm sm:text-base text-kawaii-text bg-white/90 px-6 py-3 rounded-full border border-kawaii-pink/30 shadow-sm animate-bounce">
+                    Tap the glowing flower! 🌼
                 </p>
             </div>
         </div>
     </section>
 
     <!-- PERFECT TALLER 3D CSS ENVELOPE SECTION -->
-    <section id="poem" class="py-24 px-4 min-h-screen flex flex-col items-center justify-center relative overflow-hidden z-10">
-        <h2 class="font-cute text-4xl sm:text-6xl text-center text-kawaii-text mb-16 px-2 drop-shadow-sm">A Poem Just For You 💌</h2>
-        
+    <section id="poem"
+        class="py-24 px-4 min-h-screen flex flex-col items-center justify-center relative overflow-hidden z-10">
+        <h2 class="font-cute text-4xl sm:text-6xl text-center text-kawaii-text mb-16 px-2 drop-shadow-sm">A Poem Just
+            For You 💌</h2>
+
         <!-- Envelope Container -->
-        <div id="envelope-wrapper" class="envelope-wrapper relative w-full max-w-[350px] aspect-[4/3] cursor-pointer group" onclick="this.classList.toggle('is-open')">
-            
+        <div id="envelope-wrapper"
+            class="envelope-wrapper relative w-full max-w-[350px] aspect-[4/3] cursor-pointer group"
+            onclick="this.classList.toggle('is-open')">
+
             <!-- Envelope Back -->
-            <div class="absolute inset-0 bg-[#ffe8ec] rounded-[1.5rem] shadow-inner z-0 border-[3px] border-white"></div>
-            
+            <div class="absolute inset-0 bg-[#ffe8ec] rounded-[1.5rem] shadow-inner z-0 border-[3px] border-white">
+            </div>
+
             <!-- THE POEM LETTER (Very tall, perfectly resting ON TOP) -->
-            <div class="env-letter absolute w-[90%] left-[5%] bottom-[2%] h-[480px] bg-kawaii-paper lined-paper rounded-2xl shadow-letter border border-kawaii-pink/50 p-6 flex flex-col items-center justify-start text-center">
+            <div
+                class="env-letter absolute w-[90%] left-[5%] bottom-[2%] h-[520px] bg-kawaii-paper lined-paper rounded-2xl shadow-letter border border-kawaii-pink/50 p-6 flex flex-col items-center justify-start text-center">
                 <div class="w-full flex justify-center opacity-70 mb-3 shrink-0">
-                    <svg class="w-7 h-7 text-kawaii-text" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <svg class="w-7 h-7 text-kawaii-text" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
                 </div>
-                
-                <p class="font-handwriting text-[18px] sm:text-[21px] leading-[1.35] text-kawaii-dark font-bold mt-1 w-full drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
-To sweet Anishka 🌸✨,<br><br>
 
-Your big bright smile lights up the day,<br>
-Like sunshine and rainbows coming to play.<br>
-Your happy giggles sound so sweet,<br>
-They make everyone smile when they meet.<br><br>
+                <p
+                    class="font-handwriting text-[18px] sm:text-[21px] leading-[1.35] text-kawaii-dark font-bold mt-1 w-full drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+                    To sweet Anishka 🌸✨,<br><br>
 
-Your kind little heart is warm and true,<br>
-Sharing love and hugs in all you do.<br>
-With bouncy curls and eyes that shine,<br>
-You’re the cutest friend, so special and fine.<br><br>
+                    Your big bright smile lights up the day,<br>
+                    Like sunshine and rainbows coming to play.<br>
+                    Your happy giggles sound so sweet,<br>
+                    They make everyone smile when they meet.<br><br>
 
-Remember always, sweet star so bright,<br>
-You make the whole world feel just right!
+                    Your kind little heart is warm and true,<br>
+                    Sharing love and hugs in all you do.<br>
+                    With bouncy curls and eyes that shine,<br>
+                    You’re the cutest friend, so special and fine.<br><br>
+
+                    Remember always, sweet star so bright,<br>
+                    You make the whole world feel just right! 🐰💖🌟
                 </p>
-                <div class="mt-auto pt-4 font-body font-black text-kawaii-pink text-[11px] sm:text-[12px] uppercase tracking-[0.2em] opacity-90">- Your Cutest Friend -</div>
+                <div
+                    class="mt-auto pt-4 font-body font-black text-kawaii-pink text-[11px] sm:text-[12px] uppercase tracking-[0.2em] opacity-90">
+                    - Yours Forever -</div>
             </div>
 
             <!-- Envelope Front Flaps -->
@@ -297,9 +490,13 @@ You make the whole world feel just right!
             </div>
 
             <!-- Wax Seal -->
-            <div class="env-seal absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center shadow-[0_4px_10px_rgba(255,77,109,0.5)] group-hover:scale-105 transition-transform">
+            <div
+                class="env-seal absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center shadow-[0_4px_10px_rgba(255,77,109,0.5)] group-hover:scale-105 transition-transform">
                 <div class="w-10 h-10 border-[2px] border-white/70 rounded-full flex items-center justify-center">
-                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
                 </div>
             </div>
 
@@ -308,49 +505,71 @@ You make the whole world feel just right!
                 <div class="w-full h-full bg-kawaii-pinklight flap-top drop-shadow-lg rounded-t-[1.5rem]"></div>
             </div>
         </div>
-        
-        <p class="mt-16 text-sm sm:text-base font-bold text-kawaii-text bg-white/90 px-6 py-2.5 rounded-full border border-kawaii-pink/30 shadow-sm animate-pulse">Tap envelope to open 💌</p>
+
+        <p
+            class="mt-16 text-sm sm:text-base font-bold text-kawaii-text bg-white/90 px-6 py-2.5 rounded-full border border-kawaii-pink/30 shadow-sm animate-pulse">
+            Tap envelope to open 💌</p>
     </section>
 
     <!-- PERFECT WIDER/TALLER 3D MAILBOX SECTION -->
     <section id="mailbox-sec" class="py-24 px-4 relative z-20">
         <div class="max-w-md mx-auto flex flex-col items-center text-center">
             <h2 class="font-cute text-4xl sm:text-6xl text-kawaii-text mb-4 drop-shadow-sm">You've Got Mail! 📬</h2>
-            <p class="font-bold text-sm sm:text-base text-kawaii-dark/80 mb-20 bg-white/90 px-6 py-2.5 rounded-full shadow-sm border border-kawaii-pink/30">Tap the cute mailbox to check inside 💌</p>
+            <p
+                class="font-bold text-sm sm:text-base text-kawaii-dark/80 mb-20 bg-white/90 px-6 py-2.5 rounded-full shadow-sm border border-kawaii-pink/30">
+                Tap the cute mailbox to check inside 💌</p>
 
-            <div id="mailbox-scene" class="mailbox-scene relative w-[280px] sm:w-[320px] h-[200px] sm:h-[230px] flex items-end justify-center cursor-pointer group" onclick="toggleMailbox()">
-                
+            <div id="mailbox-scene"
+                class="mailbox-scene relative w-[280px] sm:w-[320px] h-[200px] sm:h-[230px] flex items-end justify-center cursor-pointer group"
+                onclick="toggleMailbox()">
+
                 <!-- LAYER 1: MAILBOX BACK -->
-                <svg class="absolute bottom-0 w-[200px] sm:w-[230px] z-10 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 200 200" fill="none">
-                    <rect x="90" y="140" width="20" height="60" fill="#E6C2A5" rx="4"/>
-                    <path d="M30 70 C30 30, 80 30, 80 70 L80 140 C80 150, 70 160, 55 160 C40 160, 30 150, 30 140 Z" fill="#b0e0e6"/>
+                <svg class="absolute bottom-0 w-[200px] sm:w-[230px] z-10 transition-transform duration-300 group-hover:scale-105"
+                    viewBox="0 0 200 200" fill="none">
+                    <rect x="90" y="140" width="20" height="60" fill="#E6C2A5" rx="4" />
+                    <path d="M30 70 C30 30, 80 30, 80 70 L80 140 C80 150, 70 160, 55 160 C40 160, 30 150, 30 140 Z"
+                        fill="#b0e0e6" />
                 </svg>
 
                 <!-- LAYER 2: THE LETTER -->
-                <div class="mailbox-letter absolute bottom-[15%] left-1/2 w-[300px] sm:w-[360px] min-h-[280px] bg-white lined-paper border-[2px] border-kawaii-pink/30 pt-7 pb-8 px-7 rounded-3xl shadow-letter flex flex-col items-center justify-center">
-                    <div class="absolute -top-4 -right-4 w-10 h-10 bg-kawaii-text text-white rounded-full flex items-center justify-center shadow-lg transform rotate-12 text-xl border-[3px] border-white">💖</div>
-                    
-                    <h3 class="font-handwriting text-[28px] sm:text-[32px] text-kawaii-text mb-3 font-bold leading-none drop-shadow-sm">To sweet Anishka,</h3>
-                    <p class="font-handwriting text-[19px] sm:text-[23px] leading-[1.4] text-kawaii-dark text-center font-bold w-full drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+                <div
+                    class="mailbox-letter absolute bottom-[15%] left-1/2 w-[300px] sm:w-[360px] min-h-[280px] bg-white lined-paper border-[2px] border-kawaii-pink/30 pt-7 pb-8 px-7 rounded-3xl shadow-letter flex flex-col items-center justify-center">
+                    <div
+                        class="absolute -top-4 -right-4 w-10 h-10 bg-kawaii-text text-white rounded-full flex items-center justify-center shadow-lg transform rotate-12 text-xl border-[3px] border-white">
+                        💖</div>
+
+                    <h3
+                        class="font-handwriting text-[28px] sm:text-[32px] text-kawaii-text mb-3 font-bold leading-none drop-shadow-sm">
+                        To sweet Anishka,</h3>
+                    <p
+                        class="font-handwriting text-[19px] sm:text-[23px] leading-[1.4] text-kawaii-dark text-center font-bold w-full drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
                         It is a magical thing to exist in the same world as someone as wonderful as you! <br><br>
-                        Your beautiful smile has the power to light up the darkest skies. Never forget how incredibly special, cherished, and loved you are! ✨🌸
+                        Your beautiful smile has the power to light up the darkest skies. Never forget how incredibly
+                        special, cherished, and loved you are! ✨🌸
                     </p>
                 </div>
 
                 <!-- LAYER 3: MAILBOX FRONT & DOOR -->
-                <svg class="absolute bottom-0 w-[200px] sm:w-[230px] z-30 transition-transform duration-300 group-hover:scale-105 pointer-events-none" viewBox="0 0 200 200" fill="none">
-                    <path d="M55 70 C55 30, 170 30, 170 70 L170 140 C170 150, 160 160, 145 160 L55 160 C40 160, 30 150, 30 140 Z" fill="#cff3e9"/>
-                    <path d="M55 40 C100 40, 160 50, 165 70" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
-                    
+                <svg class="absolute bottom-0 w-[200px] sm:w-[230px] z-30 transition-transform duration-300 group-hover:scale-105 pointer-events-none"
+                    viewBox="0 0 200 200" fill="none">
+                    <path
+                        d="M55 70 C55 30, 170 30, 170 70 L170 140 C170 150, 160 160, 145 160 L55 160 C40 160, 30 150, 30 140 Z"
+                        fill="#cff3e9" />
+                    <path d="M55 40 C100 40, 160 50, 165 70" stroke="white" stroke-width="5" stroke-linecap="round"
+                        opacity="0.8" />
+
                     <g class="mailbox-flag">
-                        <rect x="150" y="40" width="10" height="38" fill="#ff4d6d" rx="5"/>
-                        <circle cx="155" cy="45" r="7" fill="#ff4d6d"/>
+                        <rect x="150" y="40" width="10" height="38" fill="#ff4d6d" rx="5" />
+                        <circle cx="155" cy="45" r="7" fill="#ff4d6d" />
                     </g>
 
                     <g class="mailbox-door-group pointer-events-auto cursor-pointer drop-shadow-md">
-                        <path d="M30 70 C30 30, 80 30, 80 70 L80 140 C80 150, 70 160, 55 160 C40 160, 30 150, 30 140 Z" fill="#ffb7b2" stroke="#fff" stroke-width="3"/>
-                        <path d="M55 105 C55 105 45 95 45 88 C45 82 50 78 55 83 C60 78 65 82 65 88 C65 95 55 105 55 105 Z" fill="#ff4d6d"/>
-                        <circle cx="70" cy="115" r="4" fill="#fff" shadow="0 2px 4px rgba(0,0,0,0.2)"/>
+                        <path d="M30 70 C30 30, 80 30, 80 70 L80 140 C80 150, 70 160, 55 160 C40 160, 30 150, 30 140 Z"
+                            fill="#ffb7b2" stroke="#fff" stroke-width="3" />
+                        <path
+                            d="M55 105 C55 105 45 95 45 88 C45 82 50 78 55 83 C60 78 65 82 65 88 C65 95 55 105 55 105 Z"
+                            fill="#ff4d6d" />
+                        <circle cx="70" cy="115" r="4" fill="#fff" shadow="0 2px 4px rgba(0,0,0,0.2)" />
                     </g>
                 </svg>
             </div>
@@ -360,22 +579,29 @@ You make the whole world feel just right!
     <!-- PERFECT IPHONE SIZED QUESTION SECTION -->
     <section id="question" class="py-24 px-4 relative overflow-hidden z-10">
         <div class="max-w-md mx-auto text-center relative z-10">
-            <h2 class="font-cute text-4xl sm:text-5xl text-kawaii-text mb-4 leading-tight drop-shadow-sm">Are you better than Chirag? 😏</h2>
-            <p class="font-bold text-sm sm:text-base mb-10 text-gray-500 bg-white/90 inline-block px-5 py-2 rounded-full border border-kawaii-pink/20 shadow-sm">Be completely honest now...</p>
+            <h2 class="font-cute text-4xl sm:text-5xl text-kawaii-text mb-4 leading-tight drop-shadow-sm">Are you better
+                than Chirag? 😏</h2>
+            <p
+                class="font-bold text-sm sm:text-base mb-10 text-gray-500 bg-white/90 inline-block px-5 py-2 rounded-full border border-kawaii-pink/20 shadow-sm">
+                Be completely honest now...</p>
 
             <!-- Taller container (350px) to give buttons a lot of room to run -->
-            <div id="questionContainer" class="relative w-full max-w-[360px] mx-auto h-[350px] bg-white/70 backdrop-blur-xl border-2 border-white rounded-[2.5rem] shadow-glass p-2 overflow-hidden touch-none">
-                
+            <div id="questionContainer"
+                class="relative w-full max-w-[360px] mx-auto h-[350px] bg-white/70 backdrop-blur-xl border-2 border-white rounded-[2.5rem] shadow-glass p-2 overflow-hidden touch-none">
+
                 <!-- NO Button -->
-                <button onclick="openModal()" class="btn-squish absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 bg-white text-kawaii-text border-[3px] border-kawaii-pink hover:bg-kawaii-pink hover:text-white font-cute text-2xl px-6 py-3 rounded-full shadow-button-3d transition-all duration-300 z-20 whitespace-nowrap">
+                <button onclick="openModal()"
+                    class="btn-squish absolute top-1/2 left-[20%] -translate-y-1/2 -translate-x-1/2 bg-white text-kawaii-text border-[3px] border-kawaii-pink hover:bg-kawaii-pink hover:text-white font-cute text-2xl px-6 py-3 rounded-full shadow-button-3d transition-all duration-300 z-20 whitespace-nowrap">
                     NO! 😌
                 </button>
 
                 <!-- YES Button -->
-                <button id="yesBtn" class="btn-squish absolute top-1/2 right-[20%] -translate-y-1/2 translate-x-1/2 bg-kawaii-text text-white font-cute text-2xl px-6 py-3 rounded-full shadow-button-3d flex items-center justify-center gap-2 z-30 border-[3px] border-kawaii-text whitespace-nowrap">
-                    YES! 💅 
+                <button id="yesBtn"
+                    class="btn-squish absolute top-1/2 right-[20%] -translate-y-1/2 translate-x-1/2 bg-kawaii-text text-white font-cute text-2xl px-6 py-3 rounded-full shadow-button-3d flex items-center justify-center gap-2 z-30 border-[3px] border-kawaii-text whitespace-nowrap">
+                    YES! 💅
                     <!-- Cute Tooltip Bubble -->
-                    <span id="runText" class="absolute -top-12 left-1/2 -translate-x-1/2 text-[12px] font-body font-bold text-kawaii-text bg-white px-3.5 py-1.5 rounded-xl shadow-lg opacity-0 transition-opacity duration-300 whitespace-nowrap pointer-events-none tooltip-tail border border-kawaii-pinklight">
+                    <span id="runText"
+                        class="absolute -top-12 left-1/2 -translate-x-1/2 text-[12px] font-body font-bold text-kawaii-text bg-white px-3.5 py-1.5 rounded-xl shadow-lg opacity-0 transition-opacity duration-300 whitespace-nowrap pointer-events-none tooltip-tail border border-kawaii-pinklight">
                         hehe you can't catch me! 😛
                     </span>
                 </button>
@@ -385,28 +611,34 @@ You make the whole world feel just right!
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 text-center bg-white/90 border-t-2 border-white shadow-[0_-5px_15px_rgba(255,183,178,0.2)] relative z-10">
-        <p class="font-cute text-xl text-kawaii-text flex items-center justify-center gap-2 px-4 leading-tight drop-shadow-sm">
+    <footer
+        class="py-10 text-center bg-white/90 border-t-2 border-white shadow-[0_-5px_15px_rgba(255,183,178,0.2)] relative z-10">
+        <p
+            class="font-cute text-xl text-kawaii-text flex items-center justify-center gap-2 px-4 leading-tight drop-shadow-sm">
             Made with infinite love for Anishka 🌸💕
         </p>
     </footer>
 
     <!-- Clean, Adorable Modal Finale -->
-    <div id="modal" class="fixed inset-0 bg-white/95 backdrop-blur-md z-[200] hidden items-center justify-center p-4 transition-opacity duration-500 overflow-y-auto">
+    <div id="modal"
+        class="fixed inset-0 bg-white/95 backdrop-blur-md z-[200] hidden items-center justify-center p-4 transition-opacity duration-500 overflow-y-auto">
         <div id="confetti-container" class="fixed inset-0 pointer-events-none overflow-hidden"></div>
 
-        <div class="bg-white border-[4px] border-kawaii-pinklight p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(255,77,109,0.2)] w-full max-w-[360px] sm:max-w-md text-center relative animate-pop my-auto">
+        <div
+            class="bg-white border-[4px] border-kawaii-pinklight p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(255,77,109,0.2)] w-full max-w-[360px] sm:max-w-md text-center relative animate-pop my-auto">
             <div class="absolute -top-12 left-1/2 -translate-x-1/2 text-6xl animate-bounce drop-shadow-lg">🎉</div>
             <h3 class="font-cute text-5xl text-kawaii-text mb-5 mt-4 drop-shadow-sm">HAHA! I knew it! 😜💕</h3>
-            
+
             <div class="bg-kawaii-pinklight/20 border border-kawaii-pink/30 p-5 rounded-2xl mb-6 shadow-inner">
                 <p class="font-handwriting font-bold text-[24px] sm:text-[28px] text-gray-800 leading-snug">
-                    Jokes aside... you are genuinely the absolute cutest person ever created! No one could compare. <br><br>
+                    Jokes aside... you are genuinely the absolute cutest person ever created! No one could compare.
+                    <br><br>
                     You win the golden star! ✨💖
                 </p>
             </div>
 
-            <button onclick="closeModal()" class="btn-squish w-full bg-gradient-to-r from-kawaii-pink to-kawaii-text text-white font-cute text-2xl px-6 py-3.5 rounded-full shadow-button-3d transition-all transform hover:scale-105 flex items-center justify-center gap-2 mx-auto border-2 border-white/50">
+            <button onclick="closeModal()"
+                class="btn-squish w-full bg-gradient-to-r from-kawaii-pink to-kawaii-text text-white font-cute text-2xl px-6 py-3.5 rounded-full shadow-button-3d transition-all transform hover:scale-105 flex items-center justify-center gap-2 mx-auto border-2 border-white/50">
                 Close with smiles 💌
             </button>
         </div>
@@ -418,18 +650,18 @@ You make the whole world feel just right!
         function createPetals() {
             const container = document.getElementById('petals-container');
             const petalCount = 18; // Sweet spot
-            const elements = ['🌸', '🌸', '✨', '🌸', '💖', '✨']; 
-            
-            for(let i=0; i<petalCount; i++) {
+            const elements = ['🌸', '🌸', '✨', '🌸', '💖', '✨'];
+
+            for (let i = 0; i < petalCount; i++) {
                 const petal = document.createElement('div');
                 petal.innerHTML = elements[Math.floor(Math.random() * elements.length)];
                 petal.className = 'petal text-xl sm:text-2xl drop-shadow-sm';
-                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.left = Math.random() * 100 + '%';
                 petal.style.animationDuration = (Math.random() * 6 + 10) + 's';
                 petal.style.animationDelay = '-' + (Math.random() * 12) + 's';
-                
+
                 petal.style.fontSize = (Math.random() * 12 + 16) + 'px';
-                
+
                 container.appendChild(petal);
             }
         }
@@ -439,7 +671,7 @@ You make the whole world feel just right!
         const garden = document.getElementById('flower-grid');
         let flowersHTML = '';
         const totalFlowers = 15; // 3x5 grid. Exact middle is Index 7.
-        const specialIndex = 7; 
+        const specialIndex = 7;
 
         // New SVG: White petals, vibrant green stem, yellow core
         const svgTemplateNormal = `
@@ -481,8 +713,8 @@ You make the whole world feel just right!
             </svg>
         `;
 
-        for(let i=0; i<totalFlowers; i++) {
-            if(i === specialIndex) {
+        for (let i = 0; i < totalFlowers; i++) {
+            if (i === specialIndex) {
                 flowersHTML += `
                 <div class="relative flex flex-col items-center justify-end group w-16 h-28 sm:w-20 sm:h-36 z-30">
                     <div class="absolute bottom-[100%] mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:-translate-y-2 bg-white border-2 border-kawaii-pinklight text-kawaii-text text-sm font-bold p-3 rounded-xl shadow-lg w-[170px] text-center pointer-events-none before:content-[''] before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:border-[6px] before:border-transparent before:border-t-white z-50">
@@ -518,11 +750,11 @@ You make the whole world feel just right!
         const container = document.getElementById('questionContainer');
 
         const moveButton = (e) => {
-            if(e && e.type === 'touchstart') e.preventDefault();
-            
+            if (e && e.type === 'touchstart') e.preventDefault();
+
             const containerRect = container.getBoundingClientRect();
             const btnRect = yesBtn.getBoundingClientRect();
-            
+
             // Safe boundaries inside the taller mobile container
             const padding = 15;
             const maxX = containerRect.width - btnRect.width - (padding * 2);
@@ -534,11 +766,11 @@ You make the whole world feel just right!
             yesBtn.style.transition = 'top 0.25s ease-out, left 0.25s ease-out';
             yesBtn.style.top = randomY + 'px';
             yesBtn.style.left = randomX + 'px';
-            yesBtn.style.transform = 'translate(0,0)'; 
-            
+            yesBtn.style.transform = 'translate(0,0)';
+
             runText.style.opacity = '1';
             runText.style.transform = 'translate(-50%, -5px)';
-            
+
             setTimeout(() => {
                 runText.style.opacity = '0';
                 runText.style.transform = 'translate(-50%, 0)';
@@ -546,7 +778,7 @@ You make the whole world feel just right!
         };
 
         yesBtn.addEventListener('mouseenter', moveButton);
-        yesBtn.addEventListener('touchstart', moveButton, {passive: false});
+        yesBtn.addEventListener('touchstart', moveButton, { passive: false });
         yesBtn.addEventListener('click', moveButton);
 
         // --- 5. Ultimate Confetti Modal Logic ---
@@ -575,11 +807,11 @@ You make the whole world feel just right!
             confettiContainer.innerHTML = '';
             const colors = ['#ffb7b2', '#e2d1f9', '#fff4cc', '#ff8fa3', '#cff3e9'];
             const count = window.innerWidth < 640 ? 60 : 100;
-            
-            for(let i = 0; i < count; i++) {
+
+            for (let i = 0; i < count; i++) {
                 const conf = document.createElement('div');
                 const isHeart = Math.random() > 0.7;
-                
+
                 if (isHeart) {
                     conf.innerHTML = `<svg viewBox="0 0 32 32" fill="${colors[Math.floor(Math.random() * colors.length)]}" class="w-full h-full drop-shadow-sm"><path d="M16 28 C 16 28, 4 18, 4 10 C 4 5, 10 3, 16 9 C 22 3, 28 5, 28 10 C 28 18, 16 28, 16 28 Z"/></svg>`;
                     conf.className = 'absolute w-4 h-4 sm:w-6 sm:h-6';
@@ -588,14 +820,14 @@ You make the whole world feel just right!
                     conf.className = `absolute w-2 h-2 sm:w-3 sm:h-3 ${isCircle ? 'rounded-full' : 'rounded-sm shadow-sm'}`;
                     conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                 }
-                
-                conf.style.left = Math.random() * 100 + 'vw';
+
+                conf.style.left = Math.random() * 100 + '%';
                 conf.style.top = '-5vh';
-                
+
                 const duration = Math.random() * 3 + 2;
                 const randomXMovement = Math.random() * 300 - 150;
                 const randomRotation = Math.random() * 720 + 360;
-                
+
                 conf.animate([
                     { transform: `translate3d(0,0,0) rotate(0deg) scale(1)`, opacity: 1 },
                     { transform: `translate3d(${randomXMovement}px, 105vh, 0) rotate(${randomRotation}deg) scale(0.5)`, opacity: 0 }
@@ -605,7 +837,7 @@ You make the whole world feel just right!
                     easing: 'cubic-bezier(.37,0,.63,1)',
                     fill: 'forwards'
                 });
-                
+
                 confettiContainer.appendChild(conf);
             }
         }
@@ -613,5 +845,3 @@ You make the whole world feel just right!
 </body>
 
 </html>
-
-
